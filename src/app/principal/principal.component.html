@@ -1,0 +1,31 @@
+<form class="form-projeto">
+	<h1>Incluir</h1>
+	<div class="item">
+		<label style="margin-right: 35px">Título</label>
+		<input type="text" maxlength="50" [(ngModel)]="principalService.form.titulo"
+		[ngModelOptions]="{standalone:true}" #nameTitulo>
+	</div>
+	<div class="item">
+		<label>Descrição</label>
+		<input type="text" maxlength="150" [(ngModel)]="principalService.form.descricao"
+		[ngModelOptions]="{standalone:true}" #nameDescricao>
+	</div>
+	<div class="button" (click)="enviar()">Enviar</div>
+	<div *ngIf="campoObrig === true" class="mensagem">Campo obrigatório</div>
+	<div *ngIf="principalService.mensagemSalvar === true" class="mensagem">Salvo com sucesso</div>
+	<div *ngIf="principalService.mensagemExcluir === true" class="mensagem">Excluído com sucesso</div>
+</form>
+<table>
+	<tr class="title">
+		<td>Título</td>
+		<td>Descrição</td>
+		<td>Editar</td>
+		<td>Excluir</td>
+	</tr>
+	<tr *ngFor="let item of dataModel" class="mat-row">
+		<td>{{ item.titulo }}</td>
+		<td>{{ item.descricao }}</td>
+		<td><a href="edita/{{ item.id }}">editar</a></td>
+		<td><span class="excluir" (click)="excluir($event)" id="{{ item.id }}">excluir</span></td>
+	</tr>
+</table>
