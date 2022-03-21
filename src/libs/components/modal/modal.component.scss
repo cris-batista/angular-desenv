@@ -1,0 +1,21 @@
+.c-modal {
+    width: 500px;
+
+    &__close {
+        cursor: pointer;
+        color: rgb(37, 37, 172);
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    &__form-message {
+        margin-bottom: 1rem;
+        margin-left: 0.75rem;
+        color: green;
+        font-weight: 500;
+    }
+
+    .mat-form-field {
+        display: block;
+    }
+}

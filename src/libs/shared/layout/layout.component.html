@@ -1,0 +1,11 @@
+<section class="c-menu">
+    <button mat-button [matMenuTriggerFor]="belowMenu">Principal</button>
+
+    <mat-menu #belowMenu="matMenu" yPosition="below">
+        <button mat-menu-item (click)="redirectPageHome()">Home</button>
+        <button mat-menu-item (click)="redirectPageQuemSomos()">Quem Somos</button>
+        <button mat-menu-item>Serviços</button>
+    </mat-menu>
+
+    <button mat-button (click)="redirectPageVagas()">Vagas</button>
+</section>

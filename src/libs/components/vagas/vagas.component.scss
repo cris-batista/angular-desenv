@@ -1,0 +1,41 @@
+.c-vagas {
+    padding: 1rem;
+
+    &__menu {
+        border: 1px solid #ccc;
+        margin-bottom: 3rem;
+    }
+
+    &__table {
+        width: 90%;
+    }
+
+    &__table-header {
+        font-size: 15px;
+    }
+
+    &__table-icon {
+        cursor: pointer;
+        margin-top: 1px;
+    }
+
+    &__form-create {
+        margin-top: 3rem;
+    }
+
+    &__form-message {
+        margin-bottom: 1rem;
+        margin-left: 0.75rem;
+        color: green;
+        font-weight: 500;
+    }
+
+    .mat-row:hover .mat-cell {
+        background-color: #FAFAFA;
+    }
+
+    .mat-form-field {
+        display: block;
+        width: 50%;
+    }
+}

@@ -1,0 +1,27 @@
+<section class="c-modal">
+    <h1 *ngIf="data.update">Editar Vagas</h1>
+
+    <div class="c-modal__form" *ngIf="data.update">
+        <form [formGroup]="formUpdateVagas">
+            <mat-form-field appearance="fill">
+                <mat-label>Título</mat-label>
+                <input matInput type="text" formControlName="title">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Senioridade</mat-label>
+                <input matInput type="text" formControlName="type">
+            </mat-form-field>
+
+            <div *ngIf="messageSucess" class="c-modal__form-message">{{ messageSucess }}</div>
+
+            <button mat-raised-button color="primary"
+                (click)="updateVagas(data.id)"
+                [disabled]="formUpdateVagas.invalid">
+                Alterar
+            </button>
+        </form>
+    </div>
+
+    <div class="c-modal__close" (click)="onNoClick()">fechar</div>
+</section>

@@ -1,0 +1,24 @@
+{
+  "vagas": [
+    {
+      "id": 2,
+      "title": "Programador back-end",
+      "type": "senior"
+    },
+    {
+      "title": "Programador back-end",
+      "type": "junior",
+      "id": 6
+    },
+    {
+      "title": "Programador front-end",
+      "type": "junior",
+      "id": 7
+    },
+    {
+      "title": "Recepcionista",
+      "type": "com experiência",
+      "id": 8
+    }
+  ]
+}
