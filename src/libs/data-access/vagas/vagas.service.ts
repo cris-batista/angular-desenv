@@ -32,14 +32,14 @@ export class VagasService implements OnDestroy {
         return this.httpClient.delete<Vagas>(`${this.url}/vagas/${id}`);
     }
 
-    createVagas(data: Vagas): Observable<void> {
+    createVagas(data: Vagas): Observable<Vagas> {
         const body = data;
-        return this.httpClient.post<void>(`${this.url}/vagas`, body, {});
+        return this.httpClient.post<Vagas>(`${this.url}/vagas`, body, {});
     }
 
-    updateVagas(data: Vagas, id: number): Observable<void> {
+    updateVagas(data: Vagas, id: number): Observable<Vagas> {
         const body = data;
-        return this.httpClient.put<void>(`${this.url}/vagas/${id}`, body, {})
+        return this.httpClient.put<Vagas>(`${this.url}/vagas/${id}`, body, {})
         .pipe(finalize(() => this.onUpdateVagas.next()));;
     }
 }
