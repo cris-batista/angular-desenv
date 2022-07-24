@@ -1,0 +1,21 @@
+.c-dashboards {
+    &__loading {
+        height: 20px;
+        width: 20px;
+        border-radius: 100%;
+        background-color: #ccc;
+        margin: 0 auto;
+    }
+
+    &__users {
+        margin-bottom: 1rem;
+    }
+
+    &__users-item {
+        color: #333;
+    }
+
+    &__users-item--address {
+        color: #FF0000;
+    }
+}

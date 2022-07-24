@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Subject } from 'rxjs';
 import { finalize, takeUntil, tap } from 'rxjs/operators';
 
@@ -8,6 +8,7 @@ import { Vagas } from 'src/libs/models/vagas.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
 @Component({
     selector: 'vagas',
@@ -20,17 +21,20 @@ export class VagasComponent implements OnInit, OnDestroy{
     formCreateVagas: FormGroup;
     messageSucess: string;
     isLoading: boolean;
+    itemsPerPage: number;
     
     private unsubscribe$: Subject<void>;
+    @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
     
     constructor(public vagasService: VagasService, private formBuilder: FormBuilder, public dialog: MatDialog) {
         this.unsubscribe$ = new Subject();
+        this.itemsPerPage = 5;
     }
 
     ngOnInit(): void {
         this.formCreateVagas = this.formBuilder.group({
             title: ['', [Validators.required, Validators.minLength(5)]],
-            type: ['', [Validators.required, Validators.minLength(3)]],
+            type: ['', [Validators.minLength(3)]],
         });
 
         this.getVagas();
@@ -50,6 +54,7 @@ export class VagasComponent implements OnInit, OnDestroy{
             .pipe(takeUntil(this.unsubscribe$))
             .subscribe(response => {
                 this.vagas = new MatTableDataSource(response);
+                this.vagas.paginator = this.paginator;
                 this.isLoading = false;
             });
     }

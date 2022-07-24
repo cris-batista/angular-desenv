@@ -1,0 +1,16 @@
+{
+  "general": {
+    "data": {
+      "name": "Score",
+      "description": "text test"
+    }
+  },
+
+  "users": [
+    {
+      "name": "Fulano",
+      "credential": "ad45454",
+      "address": "text test"
+    }
+  ]
+}

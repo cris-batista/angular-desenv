@@ -1,0 +1,12 @@
+<section class="c-dashboards">
+    <h1>{{ dashboardsName$ | async }}</h1>
+
+    <div>Page: {{ pageIndex$ | async }}</div>
+
+    <div class="c-dashboards__loading" *ngIf="isLoading$ | async"></div>
+
+    <ul *ngFor="let item of dashboardsUsers$ | async" class="c-dashboards__users">
+        <li class="c-dashboards__users-item">{{ item.name }}</li>
+        <li class="c-dashboards__users-item--address">{{ item.address }}</li>
+    </ul>
+</section>

@@ -27,7 +27,7 @@ export class ModalComponent implements OnInit {
     ngOnInit(): void {
         this.formUpdateVagas = this.formBuilder.group({
             title: ['', [Validators.required, Validators.minLength(5)]],
-            type: ['', [Validators.required, Validators.minLength(3)]],
+            type: ['', [Validators.minLength(3)]],
         });
 
         this.formUpdateVagas.patchValue({ title: this.data.title });

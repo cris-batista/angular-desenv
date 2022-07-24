@@ -11,7 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { VagasService } from 'src/libs/data-access/vagas/vagas.service';
 import { VagasServiceMock } from 'src/libs/data-access/mocks/vagas.service.mock';
-import { of, throwError } from 'rxjs';
+import { of } from 'rxjs';
 import { Vagas } from 'src/libs/models/vagas.model';
 
 describe('ModalComponent', () => {
@@ -62,7 +62,7 @@ describe('ModalComponent', () => {
 
     it('should have updateVagas function (success case)', () => {
         const vagasServiceStub: VagasService = TestBed.inject(VagasService);
-        const serviceSpy = spyOn(vagasServiceStub, 'updateVagas').and.returnValue(of({ title: 'title', type: 'type' }));
+        const serviceSpy = spyOn(vagasServiceStub, 'updateVagas').and.returnValue(of({ title: 'setTitle', type: 'setType' }));
         const id = 1;
 
         component.updateVagas(id);

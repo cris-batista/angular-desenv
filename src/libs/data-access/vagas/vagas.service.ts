@@ -7,7 +7,7 @@ import { Vagas } from 'src/libs/models/vagas.model';
 @Injectable({
     providedIn: 'root',
 })
-export class VagasService implements OnDestroy {
+export class VagasService {
     private url = `http://localhost:3000`;
     private unsubscribe$: Subject<void>;
     onUpdateVagas: Subject<void> = new Subject();
@@ -17,11 +17,6 @@ export class VagasService implements OnDestroy {
     ) {
         this.unsubscribe$ = new Subject();
         this.unsubscribe$.next();
-    }
-
-    ngOnDestroy(): void {
-        this.unsubscribe$.next();
-        this.unsubscribe$.complete();
     }
 
     getVagas(): Observable<Vagas[]> {
