@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { QuemSomosModule } from 'src/libs/components/quem-somos/quem-somos.module';
 import { VagasModule } from 'src/libs/components/vagas/vagas.module';
+import { DashboardsModule } from 'src/libs/components/dashboards/dashboards.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { VagasModule } from 'src/libs/components/vagas/vagas.module';
     HomeModule,
     QuemSomosModule,
     VagasModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DashboardsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

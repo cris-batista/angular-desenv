@@ -17,6 +17,10 @@ const routes: Routes = [
     loadChildren: () => import('../libs/components/vagas/vagas.module').then(module => module.VagasModule),
   },
   {
+    path: 'dashboards',
+    loadChildren: () => import('../libs/components/dashboards/dashboards.module').then(module => module.DashboardsModule),
+  },
+  {
     path: '**',
     redirectTo: 'home',
   },
